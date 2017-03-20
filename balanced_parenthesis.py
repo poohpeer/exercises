@@ -16,7 +16,7 @@ def is_balanced(string):
 
 user_input = raw_input("Please enter string with parenthesis: ")
 
-if "(" not in user_input:
+if "(" not in user_input or ")" not in user_input:
     print "No parenthesis in string."
     exit(1)
 
