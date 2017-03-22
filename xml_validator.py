@@ -32,12 +32,12 @@ for line in xml:
     if close_tag_regex.match(line):
         # If matched close tag add the tag name as dictionary key and +1
         res = close_tag_regex.match(line)
-        if res.group(2) in counter_dict and counter_dict[res.group(2)] > 0:
+        if res.group(2) in counter_dict:
+            if counter_dict[res.group(2)] < 1:
+                print "Found closing tag without matching opening {}".format(res.group(1))
             # If the tag is already in the dictionary, subtract 1 from the counter
             counter_dict[res.group(2)] -= 1
         else:
             print "Found closing tag without matching opening {}".format(res.group(1))
-            # This line shouldn't be here. Just added to demonstrate -1 in the dict values
-            counter_dict[res.group(2)] -= 1
 
 pprint(counter_dict)
