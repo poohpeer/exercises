@@ -13,7 +13,7 @@ xml = [
 
 # Regex for tags.
 open_tag_regex = re.compile("<(\w+/?)[>\s]")
-close_tag_regex = re.compile(".+(</(\w+)>)")
+close_tag_regex = re.compile(".*?(</(\w+)>)")
 counter_dict = {}
 
 for line in xml:
