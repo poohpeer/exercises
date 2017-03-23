@@ -1,5 +1,6 @@
 import re
 from pprint import pprint
+
 # File content
 xml = [
     "<xml>",
